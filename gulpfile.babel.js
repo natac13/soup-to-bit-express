@@ -27,8 +27,8 @@ gulp.task('es6', () => {
 // });
 
 gulp.task('watch', () => {
-    gulp.watch('app/src/*.js', ['es6']);
-    gulp.watch('app/tests/src/*.js', ['testES6']);
+    gulp.watch('app/src/*.js', ['es6', 'mocha']);
+    gulp.watch('app/tests/*.js', ['mocha']);
 });
 
 gulp.task('mocha', () => {

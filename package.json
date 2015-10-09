@@ -4,6 +4,7 @@
   "description": "Tutorial for soup to bits on Code School",
   "main": "index.js",
   "scripts": {
+    "start": "./bin/www ",
     "test": "mocha -w app/tests/test.js"
   },
   "keywords": [
@@ -14,6 +15,7 @@
   "author": "Sean Campbell",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3"
   },
   "devDependencies": {

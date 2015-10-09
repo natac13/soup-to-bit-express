@@ -1,0 +1,22 @@
+{
+  "name": "express-app",
+  "version": "1.0.0",
+  "description": "Tutorial for soup to bits on Code School",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "code",
+    "school"
+  ],
+  "author": "Sean Campbell",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "gulp-plumber": "^1.0.1"
+  }
+}

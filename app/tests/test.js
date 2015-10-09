@@ -1,22 +1,44 @@
-'use strict';
+import request from 'supertest';
+import app from './../main';
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _supertest = require('supertest');
-
-var _supertest2 = _interopRequireDefault(_supertest);
-
-var _main = require('./../main');
-
-var _main2 = _interopRequireDefault(_main);
-
-describe('Requests to the root path', function () {
-    it('should return a 200 status code', function (done) {
-        (0, _supertest2['default'])(_main2['default']).get('/').expect(200).end(function (error) {
-            if (error) {
-                throw error;
-            }
-            done();
+describe('Requests to the root path', () => {
+    it('should return a 200 status code', (done) => {
+        request(app)
+            .get('/')
+            .expect(200, done);
         });
+
+    it('should return HTML format', (done) => {
+        request(app)
+            .get('/')
+            .expect('Content-Type', /html/, done);
+    });
+
+    it('should return an index file with cities', (done) => {
+        request(app)
+            .get('/')
+            .expect(/cities/i, done);
     });
 });
+
+
+describe('Listing cities on /cities', () => {
+    it('should return 200 status code', (done) => {
+        request(app)
+            .get('/cities')
+            .expect(200, done);
+    });
+
+    it('should return json format', (done) => {
+        request(app)
+            .get('/cities')
+            .expect('Content-Type', /json/, done)
+    });
+
+    it('should return initial cities', (done) => {
+        request(app)
+            .get('/cities')
+            .expect(JSON.stringify(['Lotopia', 'Caspiana', 'Indigo']), done);
+    });
+});
+

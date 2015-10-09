@@ -4,7 +4,7 @@
   "description": "Tutorial for soup to bits on Code School",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha app/tests/test.js"
   },
   "keywords": [
     "express",
@@ -17,6 +17,12 @@
     "express": "^4.13.3"
   },
   "devDependencies": {
-    "gulp-plumber": "^1.0.1"
+    "babel-core": "^5.8.25",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-plumber": "^1.0.1",
+    "mocha": "^2.3.3",
+    "supertest": "^1.1.0"
   }
 }
